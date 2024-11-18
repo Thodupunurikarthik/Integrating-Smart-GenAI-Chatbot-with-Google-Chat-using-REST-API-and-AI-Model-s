@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Issues Chatbot</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #ECECEC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #4FC3F7;
+        }
+
+        .chatbox {
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #2C2C2C;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-log p {
+            padding: 10px;
+            border-radius: 12px;
+            margin: 5px 0;
+            max-width: 75%;
+            word-wrap: break-word;
+            font-size: 14px;
+        }
+
+        .user {
+            background-color: #4FC3F7;
+            margin-left: auto;
+            text-align: right;
+            color: #121212;
+            animation: fadeInRight 0.5s ease;
+        }
+
+        .bot {
+            background-color: #81C784;
+            margin-right: auto;
+            text-align: left;
+            animation: fadeInLeft 0.5s ease;
+        }
+
+        .loading {
+            color: #BDBDBD;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            margin-top: 10px;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border-radius: 20px;
+            border: 1px solid #4FC3F7;
+            font-size: 14px;
+            background-color: #2C2C2C;
+            color: #ECECEC;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: #4FC3F7;
+            color: #121212;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0288D1;
+        }
+
+        .info-section {
+            margin-top: 15px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the element */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Network Issues Chatbot</h2>
+        <div class="chatbox" id="chatbox">
+            <div class="chat-log" id="chat-log"></div>
+        </div>
+        <div class="input-group">
+            <input type="text" id="user-input" placeholder="e.g., Slow internet speed">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <!-- Tooltip Help -->
+        <div class="info-section">
+            <p>Quick Tips:</p>
+            <ul>
+                <li>Try commands like <strong>ping</strong>, <strong>tracert</strong> or <strong>ipconfig</strong>.</li>
+                <li>Describe your network issue (e.g., "WiFi not connecting").</li>
+            </ul>
+            <div class="tooltip">Need help?
+                <span class="tooltiptext">Type your network issue for assistance.</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial greeting message from the bot
+        function startConversation() {
+            displayMessage("Hi! I'm here to assist you with network issues. How can I help?", "bot");
+        }
+
+        // Show loading message
+        function showLoading() {
+            const loadingElement = document.createElement("p");
+            loadingElement.className = "loading";
+            loadingElement.id = "loading";
+            loadingElement.innerText = "Loading...";
+            document.getElementById("chat-log").appendChild(loadingElement);
+        }
+
+        // Remove loading message
+        function removeLoading() {
+            const loadingElement = document.getElementById("loading");
+            if (loadingElement) {
+                loadingElement.remove();
+            }
+        }
+
+        // Send a message to the chatbot and get a response
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value.trim();
+            if (!userInput) return;
+
+            // Display user message in the chat
+            displayMessage(userInput, "user");
+            showLoading();
+
+            try {
+                // Fetch response from backend
+                const response = await fetch(`http://127.0.0.1:8000/issues?query=${encodeURIComponent(userInput)}`);
+                const data = await response.json();
+                removeLoading();
+
+                // Display the bot's response
+                if (data.issues_found) {
+                    displayMessage(data.issues_found, "bot");
+                } else if (data.structured_issue) {
+                    displayMessage(data.message + "<br><br>" + data.structured_issue, "bot");
+                } else {
+                    displayMessage("Sorry, I couldn't find a solution to that issue.", "bot");
+                }
+            } catch (error) {
+                removeLoading();
+                displayMessage("Error: Unable to connect to the server.", "bot");
+            }
+
+            // Clear the input field
+            document.getElementById("user-input").value = "";
+        }
+
+        // Display a message in the chat log
+        function displayMessage(message, sender) {
+            const chatLog = document.getElementById("chat-log");
+            const messageElement = document.createElement("p");
+            messageElement.className = sender;
+            messageElement.innerHTML = message;
+            chatLog.appendChild(messageElement);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        // Start the conversation on page load
+        window.onload = startConversation;
+    </script>
+</body>
+</html>
