@@ -1,0 +1,347 @@
+[
+    {
+        "id": 1,
+        "title": "Network Connectivity Issues",
+        "problem": "Intermittent or no connection to the network.",
+        "cause": "Router or switch failure, poor cabling or incorrect IP configuration.",
+        "solution": "Check physical connections (cables and ports). Restart routers, switches, or devices. Verify IP settings (IP address, gateway, DNS). Reset network adapters.",
+        "keywords": [
+            "Connectivity issue",
+            "IP address conflict",
+            "no network access",
+            "gateway",
+            "DNS",
+            "DHCP"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Slow Network Performance",
+        "problem": "Slow internet or internal network performance.",
+        "cause": "Network congestion, bandwidth bottleneck, or too many devices.",
+        "solution": "Identify high-traffic devices or applications (using network monitoring tools). Upgrade network infrastructure (routers, switches, cables). Implement Quality of Service (QoS) policies to prioritize critical traffic. Limit access to bandwidth-intensive services.",
+        "keywords": [
+            "Network latency",
+            "bandwidth bottleneck",
+            "packet loss",
+            "congestion",
+            "traffic shaping",
+            "QoS"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Network disconnection",
+        "problem": "Slow internet speed",
+        "cause": "",
+        "solution": "",
+        "keywords": [
+            "disconnection",
+            "internet"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Wi-Fi Connectivity Problems",
+        "problem": "Inability to connect to Wi-Fi or weak Wi-Fi signal.",
+        "cause": "Interference, distance from access point, or outdated drivers.",
+        "solution": "Reposition the access point or router. Reduce interference by changing the Wi-Fi channel. Update Wi-Fi drivers and firmware. Install Wi-Fi extenders or additional access points.",
+        "keywords": [
+            "Wi-Fi interference",
+            "weak signal",
+            "channel overlap",
+            "access point",
+            "range extender"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "DNS Resolution Issues",
+        "problem": "Websites or services are not reachable by name (e.g. Google.com).",
+        "cause": "DNS server is down or misconfigured.",
+        "solution": "Check DNS server settings. Use alternative DNS servers (e.g. Google's 8.8.8.8 or Cloudflare's 1.1.1.1). Flush DNS cache on devices.",
+        "keywords": [
+            "DNS failure",
+            "DNS lookup",
+            "DNS cache",
+            "domain resolution"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Firewall or Security Restrictions",
+        "problem": "Inability to access certain services due to blocked ports.",
+        "cause": "Firewall misconfiguration or security rules.",
+        "solution": "Verify firewall rules. Adjust port forwarding or open necessary ports. Review and update security policies to avoid unnecessary blocking.",
+        "keywords": [
+            "Firewall",
+            "port blocking",
+            "security policy",
+            "port forwarding"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "VPN Connectivity Issues",
+        "problem": "Difficulty connecting to the company network via VPN.",
+        "cause": "VPN server down, incorrect credentials, or firewall blocking VPN traffic.",
+        "solution": "Verify VPN server status. Check user credentials and VPN client settings. Ensure firewall rules allow VPN traffic.",
+        "keywords": [
+            "VPN",
+            "remote access",
+            "VPN timeout",
+            "authentication failure"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Packet Loss",
+        "problem": "Data is lost during transmission, leading to poor application performance.",
+        "cause": "Network congestion, faulty hardware, or misconfigured devices.",
+        "solution": "Check network hardware (cables, routers). Reduce network load. Monitor and optimize network configuration.",
+        "keywords": [
+            "Packet loss",
+            "dropped packets",
+            "jitter",
+            "data loss"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Network Loop",
+        "problem": "A loop in the network causing a broadcast storm and network outage.",
+        "cause": "Misconfigured switches or redundant connections without spanning tree protocol (STP).",
+        "solution": "Identify the loop and disconnect redundant links. Enable Spanning Tree Protocol (STP) to prevent future loops.",
+        "keywords": [
+            "Network loop",
+            "broadcast storm",
+            "spanning tree protocol",
+            "switch misconfiguration"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Insufficient Network Resources",
+        "problem": "Users are unable to access the network due to a lack of resources (IP addresses, bandwidth).",
+        "cause": "Network infrastructure is overwhelmed.",
+        "solution": "Expand DHCP scope or increase IP address allocation. Upgrade network hardware (bandwidth, routers). Monitor and manage resource usage.",
+        "keywords": [
+            "DHCP pool",
+            "bandwidth shortage",
+            "network resources",
+            "infrastructure upgrade"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Network Address Translation (NAT) Issues",
+        "problem": "Devices behind a NAT can't communicate with external networks or each other properly.",
+        "cause": "Incorrect NAT configuration or too many devices sharing the same public IP.",
+        "solution": "Reconfigure NAT settings in the router. Use port forwarding or configure specific NAT rules for certain devices. Consider using a larger subnet or additional public IPs.",
+        "keywords": [
+            "NAT",
+            "port forwarding",
+            "public IP",
+            "private IP",
+            "subnet"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "High Latency",
+        "problem": "Delays in communication between devices, noticeable in applications like VoIP, gaming, or video conferencing.",
+        "cause": "Network congestion, poor routing, or distance between nodes.",
+        "solution": "Optimize routing tables and ensure appropriate traffic prioritization. Identify and remove5 bottlenecks or congestion points in the network. Consider upgrading network hardware or bandwidth capacity.",
+        "keywords": [
+            "Latency",
+            "delay",
+            "routing",
+            "traffic prioritization",
+            "network congestion"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Network Interface Card (NIC) Issues",
+        "problem": "Devices unable to connect to the network due to hardware failure or driver issues.",
+        "cause": "Malfunctioning or outdated NIC drivers or hardware.",
+        "solution": "Update or reinstall NIC drivers. Replace faulty NIC hardware if necessary. Use diagnostic tools to check NIC performance.",
+        "keywords": [
+            "NIC failure",
+            "driver update",
+            "network interface",
+            "hardware issue",
+            "connectivity failure"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Port Security or VLAN Mismatch",
+        "problem": "Devices can't connect or communicate due to port security or mismatched VLANs.",
+        "cause": "Incorrect VLAN tagging or port security settings.",
+        "solution": "Review and reconfigure VLAN assignments on switches and routers. Verify port security settings and adjust to allow access for authorized devices.",
+        "keywords": [
+            "VLAN mismatch",
+            "port security",
+            "VLAN tagging",
+            "switch configuration",
+            "network isolation"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Broadcast Storms",
+        "problem": "Excessive broadcast traffic overwhelms the network, slowing or disrupting communication.",
+        "cause": "Misconfigured switches or network loops.",
+        "solution": "Enable Spanning Tree Protocol (STP) to prevent loops. Reduce broadcast domains using VLANs. Monitor and limit broadcast traffic on the network.",
+        "keywords": [
+            "Broadcast storm",
+            "network flooding",
+            "Spanning Tree Protocol",
+            "switch misconfiguration"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "DNS Spoofing or Cache Poisoning",
+        "problem": "Users are directed to malicious websites due to compromised DNS information.",
+        "cause": "A hacker poisons the DNS cache with false information.",
+        "solution": "Use secure DNS servers with DNSSEC (Domain Name System Security Extensions). Flush DNS cache regularly. Implement firewalls and intrusion detection systems (IDS) to prevent spoofing.",
+        "keywords": [
+            "DNS spoofing",
+            "cache poisoning",
+            "DNSSEC",
+            "phishing",
+            "cybersecurity attack"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Rogue DHCP Server",
+        "problem": "Unauthorized DHCP server assigns wrong IP addresses, disrupting the network.",
+        "cause": "A misconfigured or malicious device acting as a DHCP server.",
+        "solution": "Identify and disconnect the rogue DHCP server. Use DHCP snooping to prevent unauthorized devices from assigning IP addresses. Ensure only authorized servers are configured for DHCP.",
+        "keywords": [
+            "Rogue DHCP",
+            "IP address conflict",
+            "DHCP snooping",
+            "network disruption",
+            "unauthorized server"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "IPv6 Transition Issues",
+        "problem": "Compatibility or connectivity issues when transitioning from IPv4 to IPv6.",
+        "cause": "Devices or networks not properly configured for dual-stack (IPv4/IPv6) or IPv6-only environments.",
+        "solution": "Ensure proper IPv6 addressing and routing. Enable dual-stack support on routers and switches. Update device firmware to support IPv6 if necessary.",
+        "keywords": [
+            "IPv6",
+            "dual-stack",
+            "IPv4 to IPv6",
+            "transition",
+            "address exhaustion",
+            "routing configuration"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "ARP Spoofing/Poisoning",
+        "problem": "Attackers manipulate ARP messages to intercept or disrupt traffic, leading to man-in-the-middle attacks.",
+        "cause": "Unauthenticated ARP messages allow an attacker to associate their MAC address with an IP address.",
+        "solution": "Implement ARP inspection or dynamic ARP protection on the network. Use encryption protocols like SSL/TLS to protect sensitive traffic. Regularly monitor network traffic for signs of ARP poisoning.",
+        "keywords": [
+            "ARP spoofing",
+            "ARP poisoning",
+            "man-in-the-middle",
+            "MAC address",
+            "network attack"
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Excessive Multicast Traffic",
+        "problem": "Multicast traffic overwhelms the network, affecting performance.",
+        "cause": "Misconfigured multicast groups or excessive multicast applications (e.g. video streaming).",
+        "solution": "Use IGMP snooping to limit multicast traffic to relevant devices. Configure and monitor multicast groups carefully to avoid unnecessary traffic. Segment multicast traffic onto separate VLANs.",
+        "keywords": [
+            "Multicast traffic",
+            "IGMP snooping",
+            "VLAN",
+            "video streaming",
+            "network congestion"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Generated Issue for 'the network is working slowing can u just suggest me to how to get the faster the network'",
+        "problem": "the network is working slowing can u just suggest me to how to get the faster the network",
+        "cause": "Generated by LLaMA 3",
+        "solution": "Slow network issues can be frustrating, but there are several steps you can take to troubleshoot and improve the speed:\n\n**Basic Troubleshooting Steps:**\n\n1. **Restart your router:** Sometimes, a simple reboot can resolve connectivity issues. Unplug your router, wait for 30 seconds, and plug it back in.\n2. **Check cables:** Ensure all cables are securely connected to your router, modem, and device.\n3. **Check your internet plan:** If you're experiencing slow speeds, your plan might not be sufficient for your needs. Consider upgrading your internet plan or checking with your internet service provider (ISP) for better options.\n4. **Update your router's firmware:** Ensure your router's firmware is up to date, as outdated firmware can cause connectivity issues.\n5. **Check for malware:** Run a virus scan on your device to ensure it's malware-free.\n\n**Advanced Troubleshooting Steps:**\n\n1. **Check your DNS settings:** Try changing your DNS settings to a public DNS service like Google DNS (8.8.8.8) or Cloudflare DNS (1.1.1.1).\n2. **Run a speed test:** Use a speed test tool like Speedtest.net to check your internet speed and identify any issues.\n3. **Check for interference:** Interference from other devices or physical obstructions can slow down your network. Try moving your router to a more central location or changing the channel on your router.\n4. **Configure Quality of Service (QoS):** Enable QoS on your router to prioritize traffic and reduce congestion.\n5. **Upgrade your router:** If you have an old router, consider upgrading to a newer model that supports faster Wi-Fi speeds and newer technologies like MU-MIMO.\n\n**Settings to Adjust:**\n\n1. **Wi-Fi Channel:** Change your router's Wi-Fi channel to one that is less congested.\n2. **Wireless Channel Bandwidth:** Try adjusting the wireless channel bandwidth to 20 MHz or 40 MHz for better performance.\n3. **MTU Size:** Adjust your MTU size to optimize packet transmission.\n4. **TCP/IP settings:** Check your TCP/IP settings and adjust them as needed.\n5. **Overclocking:** Some routers allow you to overclock them for better performance, but be aware that this can also increase heat and reduce lifespan.\n\n**Additional Tips:**\n\n1. **Update your devices:** Ensure all your devices, including your router, are running the latest software and firmware.\n2. **Minimize background applications:** Close unnecessary applications and background processes to prevent bandwidth consumption.\n3. **Use a Wi-Fi analyzer:** Tools like Wi-Fi Analyzer can help you scan for nearby networks and optimize your channel selection.\n\nRemember to always consult your router's manual or contact your ISP for specific guidance on adjusting settings and troubleshooting.",
+        "keywords": [
+            "the",
+            "network",
+            "is",
+            "working",
+            "slowing",
+            "can",
+            "u",
+            "just",
+            "suggest",
+            "me",
+            "to",
+            "how",
+            "to",
+            "get",
+            "the",
+            "faster",
+            "the",
+            "network"
+        ]
+    },
+    {
+        "id": 22,
+        "title": "Generated Issue for 'the put network is working slowing can u just suggest me to how to get the faster the network'",
+        "problem": "the put network is working slowing can u just suggest me to how to get the faster the network",
+        "cause": "Generated by LLaMA 3",
+        "solution": "If your PUT network is working slowly, there are several potential issues that could be contributing to the problem. Here are some suggestions to help you troubleshoot and potentially improve the speed of your PUT network:\n\n1. **Network Congestion:** Check if your network is experiencing congestion by running a network usage analysis tool. You can use tools like Wireshark or ETHTOOL to identify which devices or applications are consuming the most bandwidth.\n\n2. **Slow Server Response Time:** If the server hosting the PUT network is remote, check the server's response time. Try using tools like Pingdom or UptimeRobot to analyze the server's performance.\n\n3. **TCP Connection Delay:** Telnet or NMAP might not be the right tools to send 100 tcp packets. Consider PING or using Netcat with the `-6` flag like below\n   - `nc -6 -w 1 hostname portnumber`\n\n4. **Packet Loss:** Use tools like Ping or MTR to detect packet loss and latency issues.\n\n5. **Firewall or Router Configurations:** Verify that firewalls and routers are not blocking or throttling traffic on the PUT network. Adjust the configurations if necessary.\n\n6. **Update Network Drivers:** Ensure that the network drivers are up-to-date on all devices connected to the network.\n\n7. **Use Quality of Service (QoS) Settings:** Many network devices and routers support QoS settings. These can help prioritize traffic and ensure that critical applications like the PUT network receive sufficient bandwidth.\n\n8. **Reduce Network Contention:** Identify applications or services that are competing for bandwidth with the PUT network and address the contention.\n\n9. **Optimize the PUT Network Configuration:** Review the PUT network configuration and adjust settings such as timeout values, packet size, and buffer sizes.\n\n10. **Consider Using a Different Network Interface:** If you're using a wireless network interface, try switching to a wired interface to see if there's a difference.\n\nTo troubleshoot these issues, you can use various network diagnosis tools like:\n\n* Ping\n* Traceroute\n* MTR (My Trace Route)\n* Wireshark\n* NPM (Network Performance Monitor)\n* SolarWinds Network Performance Monitor\n\nPlease note that the specific steps and tools required may vary depending on the complexity and scope of your PUT network setup.",
+        "keywords": [
+            "the",
+            "put",
+            "network",
+            "is",
+            "working",
+            "slowing",
+            "can",
+            "u",
+            "just",
+            "suggest",
+            "me",
+            "to",
+            "how",
+            "to",
+            "get",
+            "the",
+            "faster",
+            "the",
+            "network"
+        ]
+    },
+    {
+        "id": 23,
+        "title": "Generated Issue for 'give the best network to work on macbook'",
+        "problem": "give the best network to work on macbook",
+        "cause": "Generated by LLaMA 3",
+        "solution": "Choosing the best network for your MacBook can depend on several factors, including your location, the type of activities you'll be using the network for, and your budget. Here are a few options to consider:\n\n1. **Ethernet (Wired Network)**: Ethernet is often considered the fastest and most stable network option. It uses a physical cable to connect your MacBook to a router or switch. Ethernet cables can provide speeds of up to 10 Gbps (gigabits per second), which is much faster than wireless networks.\n\nPros: Fast speeds, stable, secure\nCons: Limited range (cable), not portable\n\n2. **Wi-Fi (Wireless Network)**: Wi-Fi is a popular choice for mobile devices, but it can also be used with desktops and laptops. Wi-Fi uses radio waves to connect your MacBook to a router or access point. Speeds can vary, but modern Wi-Fi protocols like 802.11ax (Wi-Fi 6) can reach speeds of up to 9.6 Gbps.\n\nPros: Portable, easy to set up\nCons: Speeds may vary, signal strength can be affected by interference\n\n3. **Bluetooth Network**: Bluetooth is a personal area network (PAN) technology that allows devices to connect to each other over short distances (usually up to 10 meters or 33 feet). Bluetooth is commonly used for devices like headphones, speakers, and keyboards.\n\nPros: Easy to set up, secure\nCons: Limited range, limited speeds (up to 2 Mbps)\n\nBest Network for MacBook:\nIf you're looking for the fastest and most stable network option, I would recommend Ethernet (wired network). Ethernet is ideal for:\n\n* Large file transfers\n* Video editing and streaming\n* Online gaming\n* Heavy internet usage\n\nIf you prefer a wireless network, I would recommend Wi-Fi (wireless network). Wi-Fi is ideal for:\n\n* General browsing and email\n* Social media and streaming\n* Online shopping and banking\n\nIf you need a network for a small device, such as a smartwatch or headphones, Bluetooth may be a good option.\n\n**Tips and Considerations:**\n\n* Use a strong password and WPA2 encryption (or WPA3 if available) to secure your network.\n* Place your router in a central location to ensure even coverage.\n* Use Quality of Service (QoS) settings to prioritize important network traffic.\n* Regularly update your router's firmware to ensure you have the latest security patches and features.\n\nI hope this helps you choose the best network for your MacBook!",
+        "keywords": [
+            "give",
+            "the",
+            "best",
+            "network",
+            "to",
+            "work",
+            "on",
+            "macbook"
+        ]
+    }
+]
